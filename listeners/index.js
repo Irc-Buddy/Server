@@ -1,14 +1,7 @@
-const { wss } = require('../www/')
-const { dispatch } = require('../actions/')
+const websocket = require('./websocket')
+const ircListener = require('./irc')
 
-module.exports = () => {
-    wss.on('connection', ws => {
-        function handleMessage(message) {
-            dispatch(
-                JSON.parse(message),
-                ws
-            )
-        }
-        ws.on('message', handleMessage)
-    })
+module.exports = {
+    websocket,
+    ircListener
 }

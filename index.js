@@ -1,4 +1,4 @@
 const listeners = require('./listeners')
 
 // Init listeners
-listeners()
+listeners.websocket()
